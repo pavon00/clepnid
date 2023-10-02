@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Delta Meet</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+
+<body>
+    <p id="notification" hidden></p>
+    <div class="entry-modal" id="entry-modal">
+        <img src="./play.png" alt="Empezar" class="center">
+    </div>
+    <div class="resize-modal" id="resize-modal">
+        <button class="button-absolute" id="resize-button">
+            <img src="./resize.png" alt="Empezar" class="center">
+        </button>
+        <button class="button-absolute" id="input-keys-button">
+            <img src="./teclado.png" alt="Empezar" class="center">
+        </button>
+        <!-- Ventana modal -->
+        <div id="modal-textarea" class="modal-textarea">
+            <!-- Contenido de la ventana modal -->
+            <div class="modal-contenido-textarea">
+                <!-- Área de texto para introducir el texto -->
+                <form>
+                  <p><label for="mi-textarea">Review of W3Schools:</label></p>
+                  <textarea id="mi-textarea" name="w3review" rows="4" cols="50"></textarea>
+                  <br>
+                <!-- Botón para enviar el texto -->
+                <button id="btn-enviar">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="contenedor">
+        <!-- Remote Video Element-->
+        <div id="focusArea" onmousemove="getPos(event)">
+            <video id="remote-video" autoplay playsinline style="pointer-events: none;"></video>
+        </div>
+    </div>
+        
+</body>
+
+<script src="./peerjs_1_4_7.js"></script>
+<script src="./script.js"></script>
+
+</html>

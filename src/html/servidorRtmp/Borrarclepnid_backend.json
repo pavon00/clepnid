@@ -1,0 +1,19 @@
+[
+	{
+		"Web": {
+			"TypeModule": "Sistema",
+			"Title": "servidorRtmp",
+			"ComandOpen": "java -jar ./src/html/servidorRtmp/servidorRtmp.jar",
+			"ComandClose": "taskkill /f /im java.exe",
+			"ListaRutas": [				{
+					"RutaEjecutable": "localhost:3386/live/first",
+					"RutaClepnid": "/liveMonitor",
+					"Tipo":"get"
+				},{
+					"RutaEjecutable": "localhost:1935/live/first",
+					"RutaClepnid": "/liveMonitorRtmp",
+					"Tipo":"get"
+				}]
+		}
+	}
+]

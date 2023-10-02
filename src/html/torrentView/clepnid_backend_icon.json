@@ -1,0 +1,10 @@
+[
+	{
+    "Web": {
+        "Title": "torrent",
+	"GoTo": "/torrentView/index.html",
+	"Description": "Ver contenido torrent",
+	"Image": "/torrentView/imagen.jpg"
+        }
+    }
+]

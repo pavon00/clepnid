@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>FlvTest</title>
+
+</head>
+<style>
+body {
+	padding:0;
+margin:0;
+  height: 100%;
+}
+
+.bg {
+  /* background-image: url("/ClepnidCompartirPantalla"); */
+  /* Full height */
+	padding:0;
+margin:0;
+ width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+videoElement {
+	padding:0;
+margin:0;
+  object-fit: fill;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+</style>
+<script src="https://cdn.bootcdn.net/ajax/libs/flv.js/1.5.0/flv.min.js"></script>
+<script>
+    var flvPlayer;
+    function goPlay() {
+        console.log("play button press")
+        flvPlayer.play();
+    }
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+	async function comenzar(){
+		goLoad();
+            	flvPlayer.muted = true;
+		goPlay();
+	}
+
+	async function bucle(){
+	await sleep(5000);
+	flvPlayer.unload();
+	flvPlayer.load();
+	flvPlayer.play();
+	await sleep(5000);
+	bucle();
+	}
+    function goLoad() {
+        console.log("load click!");
+        console.log("mse live support:" + flvjs.getFeatureList().mseLiveFlvPlayback);
+        if (flvjs.isSupported()) {
+    		var videoElement = document.getElementById('videoElement');
+            flvPlayer = flvjs.createPlayer({
+                type: 'flv',
+                isLive: true,
+                url: "/liveMonitor",
+                duration: 0,
+                filesize: 0,
+                enableStashBuffer: false,
+                hasAudio: true,
+                hasVideo: true
+            });
+            flvPlayer.attachMediaElement(videoElement);
+            flvPlayer.load();
+        }
+    }
+window.onload = (event) =>{
+
+    comenzar();
+    bucle();
+
+};
+
+
+</script>
+<body>
+<div class="bg">
+  <video id="videoElement" width="100%"></video>
+</div>
+    
+
+
+</body>
+
+
+
+
+</html>

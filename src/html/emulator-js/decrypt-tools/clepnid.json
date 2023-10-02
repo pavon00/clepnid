@@ -1,0 +1,15 @@
+[
+	{
+    "Web": {
+        "Title": "Emular",
+        "Extensions": ["bin", "iso", "cue", "img", "mdf", "pbp", "toc", "cbn", "m3u", "nds","fds", "nes", "unif", "unf","smc", "fig", "sfc", "gd3", "gd7", "dx2", "bsx", "swc","gb", "gbc", "dmg", "gba", "vb", "vboy", "lnx", "j64", "jag", "rom", "abs", "cof", "a78", "a26","ngp", "ngc","n64", "v64", "z64", "u1", "ndd", "pce", "ccd", "chd", "mdx", "md", "smd", "gen", "sms", "gg", "sg", "68k", "32x","mx1", "mx2", "dsk", "cas","ri", "col", "sc", "ws", "wsc", "zip"],
+        "BotonText": "Jugar Qr",
+        "HtmlBodyReplace": "no hay juego",
+		"Group": "",
+		"Html": "./index.html",
+		"rutaHttp": "/emulator-js/decrypt-tools",
+	"rutaImagen": "/emulator-js/muestra.jpg"
+        }
+    }
+
+]

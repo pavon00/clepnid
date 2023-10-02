@@ -1,0 +1,15 @@
+[
+	{
+    "Web": {
+        "Title": "editor imagenes",
+        "Extensions": ["jpg", "jpeg", "png", "gif"],
+        "BotonText": "editar Qr",
+        "HtmlBodyReplace": "no hay imagen",
+		"Group": "",
+		"Html": "./index.html",
+		"rutaHttp": "/editor-imagenes",
+	"rutaImagen": "/editor-imagenes/muestra.jpg"
+        }
+    }
+
+]

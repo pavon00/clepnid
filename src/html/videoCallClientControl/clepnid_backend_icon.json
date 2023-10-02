@@ -1,0 +1,10 @@
+[
+	{
+    "Web": {
+        "Title": "PC Control",
+	"GoTo": "/videoCallClientControl/index.html",
+	"Description": "Controla PC servidor",
+	"Image": "/videoCallClientControl/image.png"
+        }
+    }
+]

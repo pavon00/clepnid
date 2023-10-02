@@ -1,0 +1,16 @@
+[
+	{
+    "Web": {
+        "Title": "Music Reproductor",
+        "Extensions": ["mp3", "ogg","wav", "flac", "aac"],
+        "BotonText": "Reproductor",
+        "HtmlBodyReplace": "no hay musica",
+		"Group": "si",
+		"Html": "./index.html",
+		"rutaHttp": "/js-music-player",
+		"rutaImagen": "/js-music-player/muestra.jpg"
+        }
+	
+    }
+
+]

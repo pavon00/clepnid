@@ -1,0 +1,10 @@
+[
+	{
+    "Web": {
+        "Title": "system_info_python",
+	"GoTo": "/system_info_python/index.html",
+	"Description": "Ver los niveles de cpu y ram en tiempo real del servidor",
+	"Image": "/system_info_python/image.jpg"
+        }
+    }
+]

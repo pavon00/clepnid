@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Dash.js Rocks</title>
+        <style>
+            video {
+                width: 640px;
+                height: 360px;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="http://cdn.dashjs.org/v3.1.0/dash.all.min.js"></script>
+        <script>
+
+    function init() {
+        var player1, player2, video;
+        var MPD_2S_SEGMENTS = './ffmpegMonitorRecord/files/out.mpd';
+        var settings = { 'streaming': { 'delay': { 'liveDelayFragmentCount': 0 } } }
+
+        video = document.querySelector('#video1');
+        player1 = dashjs.MediaPlayer().create();
+        player1.initialize(video, MPD_2S_SEGMENTS, true);
+        player1.updateSettings(settings);
+
+        video = document.querySelector('#video2');
+        player2 = dashjs.MediaPlayer().create();
+        player2.initialize(video, MPD_2S_SEGMENTS, true);
+        player2.updateSettings(settings);
+
+
+        setInterval(function () {
+            var d = new Date();
+            var seconds = d.getSeconds();
+            document.querySelector('#sec').innerHTML = (seconds < 10 ? '0' : '') + seconds;
+            var minutes = d.getMinutes();
+            document.querySelector('#min').innerHTML = (minutes < 10 ? '0' : '') + minutes + ':';
+            for (var i = 1; i < 3; i++) {
+                var p = eval('player' + i);
+                document.querySelector('#video' + i + 'delay').innerHTML = Math.round((d.getTime() / 1000) - Number(p.timeAsUTC()));
+                document.querySelector('#video' + i + 'buffer').innerHTML = p.getBufferLength() + 's';
+            }
+
+
+        }, 1000);
+
+    }
+</script>
+<div>
+    <video id="video1" controls="true" muted=""></video>
+    <div>
+        <div><i class="bi bi-arrow-right-square"></i> Seconds behind live: <span id="video1delay"></span></div>
+        <div><i class="bi bi-arrow-right-square"></i> Buffer length: <span id="video1buffer"></span></div>
+    </div>
+</div>
+<div>
+    <video id="video2" controls="true" muted=""></video>
+    <div>
+        <div><i class="bi bi-arrow-right-square"></i> Seconds behind live: <span id="video2delay"></span></div>
+        <div><i class="bi bi-arrow-right-square"></i> Buffer length: <span id="video2buffer"></span></div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        init();
+    });
+</script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Delta Meet</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <p id="notification" hidden></p>
+    <div class="entry-modal" id="entry-modal">
+        <img src="./play.png" alt="Empezar" class="center">
+    </div>
+    <div class="resize-modal" id="resize-modal">
+        <button id="resize-button">
+            <img src="./resize.png" alt="Empezar" class="center">
+        </button>
+        
+    </div>
+    <div class="meet-area">
+        <!-- Remote Video Element-->
+        <video id="remote-video" autoplay playsinline style="pointer-events: none;"></video>
+    </div>
+</body>
+
+<script src="./peerjs_1_4_7.js"></script>
+<script src="script.js"></script>
+
+</html>

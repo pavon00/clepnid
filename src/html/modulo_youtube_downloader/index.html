@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./style.scss" />
+    <title>Video Uploader</title>
+  </head>
+
+  <body>
+    <h1 class="heading">Video Downloader</h1>
+    <div class="Input">
+      <input
+        type="text"
+        id="input"
+        class="URL-input"
+        placeholder="https://www.youtube.com/watch?v=MtN1YnoL46Q"
+      />
+      <label for="input" class="Input-label">Url Video</label>
+    </div>
+    <label for="standard-select">Video from:</label>
+    <div class="select">
+      <select class="tip">
+        <option value="youtube">Youtube</option>
+        <option value="other">Other</option>
+      </select>
+      <span class="focus"></span>
+    </div>
+    <label for="standard-select">Format:</label>
+    <div class="select">
+      <select class="opt">
+        <option value="mp4">mp4</option>
+        <option value="mpeg">mpeg</option>
+        <option value="mkv">mkv</option>
+        <option value="mp3">mp3</option>
+      </select>
+      <span class="focus"></span>
+    </div>
+    <label for="standard-select">Quality:</label>
+    <div class="select">
+      <select class="qua">
+        <option value="highest">highest</option>
+        <option value="144p">144p</option>
+        <option value="240p">240p</option>
+        <option value="360p">360p</option>
+        <option value="480p">480p</option>
+        <option value="720p">720p</option>
+        <option value="720p30">720p30</option>
+        <option value="720p60">720p60</option>
+        <option value="1080p">1080p</option>
+        <option value="1080p30">1080p30</option>
+        <option value="1080p60">1080p60</option>
+        <option value="1440p">1440p</option>
+        <option value="1440p30">1440p30</option>
+        <option value="1440p60">1440p60</option>
+        <option value="2160p">2160p</option>
+        <option value="2160p30">2160p30</option>
+        <option value="2160p60">2160p60</option>
+      </select>
+    </div>
+    <div class="Input">
+      <input
+        type="text"
+        id="input2"
+        class="URL-name-output"
+        placeholder="name file output"
+      />
+      <label for="input" class="Input-label">Name File Output</label>
+    </div>
+
+    <button class="convert-button" id="btn">Upload</button>
+    <script src="./script.js"></script>
+  </body>
+</html>

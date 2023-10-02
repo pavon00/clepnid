@@ -1,0 +1,10 @@
+[
+	{
+    "Web": {
+        "Title": "Screen View",
+	"GoTo": "/videoCallClient/index.html",
+	"Description": "Ver pantalla del servidor",
+	"Image": "/videoCallClient/image.png"
+        }
+    }
+]

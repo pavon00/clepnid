@@ -1,0 +1,10 @@
+[
+	{
+    "Web": {
+        "Title": "Screen Sharing",
+	"GoTo": "/videoCallServer/index.html",
+	"Description": "Comparte pantalla del pc mediante navegador",
+	"Image": "/videoCallServer/image.png"
+        }
+    }
+]

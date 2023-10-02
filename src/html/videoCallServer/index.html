@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>Delta Meet</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <p id="notification" hidden></p>
+    <div class="meet-area">
+        <!-- Remote Video Element-->
+        <video id="remote-video"></video>
+
+        <!-- Local Video Element-->
+        <video id="local-video"></video>
+        <div class="meet-controls-bar">
+            <button onclick="startScreenShare()">Screen Share</button>
+        </div>
+    </div>
+</body>
+
+<script src="./peerjs_1_4_7.js"></script>
+<script src="script.js"></script>
+
+</html>

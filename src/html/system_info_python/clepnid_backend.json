@@ -1,0 +1,17 @@
+[
+	{
+		"Web": {
+			"TypeModule": "Sistema",
+			"Title": "system_info_python",
+			"ComandOpen": "pip install pipreqs | pip install -r ./src/html/system_info_python/requirements.txt | python ./src/html/system_info_python/main.py",
+			"ComandClose": "taskkill /f /im python.exe",
+			"ListaRutas": [				
+				{
+					"RutaEjecutable": "localhost:3300/systemPerformance",
+					"RutaClepnid": "/systemPerformance",
+					"Tipo":"get"
+				}
+			]
+		}
+	}
+]

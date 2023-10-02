@@ -1,0 +1,14 @@
+\\bajar video con configuracion
+.\ffmpeg-win.exe --url https://www.youtube.com/watch?v=u0CqY27IFyo -f mp4 -q 1080p60 -o hola
+
+\\bajar video con mayor calidad con configuracion
+.\ffmpeg-win.exe --url https://www.youtube.com/watch?v=u0CqY27IFyo -f mp4 -q highest -o hola
+
+\\musica mejor calidad
+.\ytdl-win.exe --quality "highestaudio" https://www.youtube.com/watch?v=u0CqY27IFyo | .\ffmpeg.exe -i pipe:0 -b:a 192K -vn myfile.mp3
+
+\\ descargar video de otra pagina
+.\yt-dlp.exe -o video.mp4 http://otra-web-sacada de https://www.downloadhelper.net/
+
+\\ descargar audio de otra pagina
+.\yt-dlp.exe -o http://otra-web-sacada de https://www.downloadhelper.net/ | .\ffmpeg.exe -i pipe:0 -b:a 192K -vn myfile.mp3

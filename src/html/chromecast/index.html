@@ -1,0 +1,123 @@
+<!DOCTYPE doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+            <meta charset="utf-8"/>
+        <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/>
+        <meta content="#000000" name="theme-color"/>
+        <link href="/manifest.json" rel="manifest"/>
+        <link href="/favicon.ico" rel="shortcut icon"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.13.3/video-js.min.css" rel="stylesheet"/>
+        <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1" type="text/javascript">
+        </script>
+        <script defer="defer" src="/chromecast/static/js/main.1af2fdf0.js">
+        </script>
+        <link href="/chromecast/static/css/main.c5f0d528.css" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+                    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+                        <link href="/chromecast/css/all.min.css" rel="stylesheet">
+                            <link href="/chromecast/css/rangeslider.css" rel="stylesheet">
+                                <link href="/chromecast/css/jquery.dropdown.min.css" rel="stylesheet">
+                                    <link href="/chromecast/css/default.min.css" rel="stylesheet">
+                                        <link href="/chromecast/css/an-old-hope.min.css" rel="stylesheet">
+                                            <link href="/chromecast/style.css" rel="stylesheet">
+                                                <title>
+                                                    Clepnid
+                                                </title>
+                                            </link>
+                                        </link>
+                                    </link>
+                                </link>
+                            </link>
+                        </link>
+                    </link>
+                </link>
+            </meta>
+        </meta>
+    </head>
+    <body class="disabled">
+        <noscript>
+            Necesitas habilitar JavaScript para correr esta aplicacion
+        </noscript>
+        <div id="root">
+        </div>
+        <p id="div1" style="display: none">no hay video</p>
+        <div class="container">
+            <div class="col">
+                <div class="clear">
+                </div>
+                <div class="settings">
+                    <i class="fas fa-closed-captioning" data-jq-dropdown="#jq-dropdown-1" id="captions">
+                    </i>
+                    <div class="jq-dropdown jq-dropdown-tip" id="jq-dropdown-1">
+                        <ul class="jq-dropdown-menu">
+                            <li>
+                                <a class="active" href="0">
+                                    English
+                                </a>
+                            </li>
+                            <li>
+                                <a href="1">
+                                    Spanish
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <i class="fas fa-volume-up" id="mute">
+                    </i>
+                    <i class="fab fa-chromecast disabled" id="cast">
+                    </i>
+                </div>
+                <div class="timeline">
+                    <div id="time">
+                        00:00:00
+                    </div>
+                    <input id="range" max="100" min="0" step="1" type="range" value="0">
+                        <div id="duration">
+                            00:00:00
+                        </div>
+                    </input>
+                </div>
+                <div class="controls">
+                    <i class="fas fa-history" id="back">
+                    </i>
+                    <i class="fas fa-play" id="play">
+                    </i>
+                    <i class="fas fa-history fa-flip-horizontal" id="forward">
+                    </i>
+                </div>
+                <div id="state">
+                    Disconnected
+                </div>
+            </div>
+            <div class="col">
+                <textarea id="debug">
+                </textarea>
+            </div>
+            <div class="clear">
+            </div>
+            
+      </pre>
+            
+        </div>
+        <script src="/chromecast/js/jquery.min.js">
+        </script>
+        <script src="/chromecast/js/jquery.dropdown.min.js">
+        </script>
+        <script src="/chromecast/js/highlight.min.js">
+        </script>
+        <script src="/chromecast/js/rangeslider.js">
+        </script>
+        <script crossorigin="anonymous" src="/chromecast/js/cast.js">
+        </script>
+        <script crossorigin="anonymous" src="/chromecast/player.js">
+        </script>
+        <script>
+            var val = '<script src=\"https://cdnjs.cloudflare.com/ajax/libs/castjs/4.1.2/cast.min.js\">\<\/script>'
+      val = val.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+      $('.language-html').html(val)
+      hljs.initHighlightingOnLoad();
+        </script>
+    </body>
+</html>

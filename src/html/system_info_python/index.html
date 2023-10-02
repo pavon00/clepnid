@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Progress Bars</title>
+    <script src="https://cdn.jsdelivr.net/npm/progressbar.js@1.1.0/dist/progressbar.min.js"></script>
+  </head>
+  <body>
+    <!-- Crear dos divs para contener las barras de progreso -->
+    <div id="progressBars">
+      <div class="contenedorIndividual">
+        <p>Cpu:</p>
+        <div class="circulo" id="cpu-progress">
+          <span class="textoCirculo" id="labelCpu"></span>
+        </div>
+      </div>
+      <div class="contenedorIndividual">
+        <p>Ram:</p>
+        <div class="circulo" id="ram-progress">
+          <span class="textoCirculo" id="labelRam"></span>
+        </div>
+      </div>
+    </div>
+    <script>
+      var labelCpu = document.getElementById("labelCpu");
+      var labelRam = document.getElementById("labelRam");
+      // Crear las dos barras de progreso circulares
+      var cpuProgress = new ProgressBar.Circle('#cpu-progress', {
+        color: '#00ff00',  // verde
+        duration: 1400,
+        easing: 'easeInOut'
+      });
+      
+      var ramProgress = new ProgressBar.Circle('#ram-progress', {
+        color: '#00ff00',  // verde
+        duration: 1400,
+        easing: 'easeInOut'
+      });
+      
+      // Actualizar las barras de progreso cada 2 segundos
+      setInterval(() => {
+        fetch('/systemPerformance')  // Obtener el valor actual de la CPU desde el servidor
+          .then(response => response.json())
+          .then(data => {
+            const cpuValue = data['data']['cpu'];
+            const ramValue = data['data']['ram'];
+            // Actualizar el valor y el color de la barra de progreso de la CPU
+            const progressCpu = cpuValue/100;
+            if (progressCpu<=100 && progressCpu>=0) {
+              labelCpu.textContent=cpuValue+"%";
+              cpuProgress.animate(progressCpu);
+              //cambiar color
+              var cpuCirculo = document.getElementById("cpu-progress");
+              let svgCpu = cpuCirculo.lastElementChild;
+              let pathCpu = svgCpu.firstElementChild;
+              pathCpu.setAttribute("stroke", getColor(cpuValue));
+
+            }
+            
+            // Actualizar el valor y el color de la barra de progreso de la memoria RAM
+        
+            const progressRam = ramValue/100;
+            if (ramValue<=100 && ramValue>=0) {
+              labelRam.textContent=ramValue+"%";
+              ramProgress.animate(progressRam);
+              //cambiar color
+              var ramCirculo = document.getElementById("ram-progress");
+              let svgRam = ramCirculo.lastElementChild;
+              let pathRam = svgRam.firstElementChild;
+              pathRam.setAttribute("stroke", getColor(ramValue));
+            }
+
+          });
+      }, 4000);
+
+      var circulos = document.getElementsByClassName("circulo");
+      for(i=0;i<circulos.length;i++){
+        circulos[i].style.position = 'relative';
+      }
+      var textoCirculo = document.getElementsByClassName("textoCirculo");
+      for(i=0;i<textoCirculo.length;i++){
+        textoCirculo[i].style.position = 'absolute';
+        textoCirculo[i].style.top = '50%';
+        textoCirculo[i].style.left = '50%';
+        textoCirculo[i].style.transform = 'translate(-50%, -50%)';
+      }
+      var contenedorIndividual = document.getElementsByClassName("contenedorIndividual");
+      for(i=0;i<contenedorIndividual.length;i++){
+        contenedorIndividual[i].style.width = '50%';
+        contenedorIndividual[i].style.display = 'flex';
+        contenedorIndividual[i].style.flexDirection = 'column';
+      }
+      var contenedorGlobal = document.getElementById("progressBars");
+      contenedorGlobal.style.display = 'flex';
+      contenedorGlobal.style.gap = '4rem';
+  // Función para obtener el color en función del valor de la CPU
+function getColor(cpuValue) {
+  if (cpuValue <= 50) {
+    return '#00ff00';  // verde
+  } else if (cpuValue <= 80) {
+    return '#ffa500';  // naranja
+  } else {
+    return '#ff0000';  // rojo
+  }
+}
+</script>
+  </body>
+</html>
